@@ -1,0 +1,22 @@
+AULA DE BANCO DE DADOS - I
+
+Modelagem de dados (conceitual): 
+-Criação de um diagrama simplificado para estruturar o armazenamento e mecanismo de fluxo de informações relevantes;
+-Requer análise de requisitos para entender o objetivo da modelagem.
+-Importância: previsão de erros; ajuste de necessidades; evitar retrabalho; padronização.
+-Etapas: Análise de requisitos (necessidades do cliente e requisitos do projeto); Modelagem conceitual (Capturar requisitos e organizá-los com uma visão corporativa - Entidades, Relacionamentos, Cardinalidade, Atributos); 
+-Regras de negócio (definições corporativas)
+
+Modelagem lógica de dados (MLDs):
+-Agrega informações que garantem a lógica do sistema sendo desenvolvido;
+-Adição de chaves (Primárias e estrangeiras)
+-PK: chave exclusiva / FK: chaves associativas (estabelece relações). 
+
+Modelagem física de dados (MFDs):
+-Transformação de modelo lógico de dados em modelo físico;
+-Parte técnica e criação do banco de dados em si (variáveis, colunas, tipos, etc.);
+-Precisa ser lido por um SGBD.
+
+
+
+
