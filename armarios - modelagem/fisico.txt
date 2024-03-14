@@ -1,0 +1,52 @@
+/* Lógico_1: */
+
+CREATE TABLE Alunos (
+    RM int PRIMARY KEY,
+    Nome varchar,
+    Turma varchar
+);
+
+CREATE TABLE Armario (
+    Id_Armario varchar PRIMARY KEY,
+    Bloco varchar,
+    Coluna int,
+    Id_Chave varchar
+);
+
+CREATE TABLE Associacao (
+    Id_Armario varchar,
+    RM int,
+    PRIMARY KEY (Id_Armario, RM)
+);
+
+CREATE TABLE Relacionamento_1 (
+    fk_Alunos_RM int,
+    fk_Associacao_Id_Armario varchar,
+    fk_Associacao_RM int
+);
+
+CREATE TABLE Relacionamento_2 (
+    fk_Armario_Id_Armario varchar,
+    fk_Associacao_Id_Armario varchar,
+    fk_Associacao_RM int
+);
+ 
+ALTER TABLE Relacionamento_1 ADD CONSTRAINT FK_Relacionamento_1_1
+    FOREIGN KEY (fk_Alunos_RM)
+    REFERENCES Alunos (RM)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Relacionamento_1 ADD CONSTRAINT FK_Relacionamento_1_2
+    FOREIGN KEY (fk_Associacao_Id_Armario, fk_Associacao_RM)
+    REFERENCES Associacao (Id_Armario, RM)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Relacionamento_2 ADD CONSTRAINT FK_Relacionamento_2_1
+    FOREIGN KEY (fk_Armario_Id_Armario)
+    REFERENCES Armario (Id_Armario)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Relacionamento_2 ADD CONSTRAINT FK_Relacionamento_2_2
+    FOREIGN KEY (fk_Associacao_Id_Armario, fk_Associacao_RM)
+    REFERENCES Associacao (Id_Armario, RM)
+    ON DELETE SET NULL;
