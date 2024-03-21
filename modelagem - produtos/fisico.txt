@@ -1,0 +1,61 @@
+/* Lógico_1: */
+
+CREATE TABLE Produto (
+    preco float,
+    codigoProduto varchar PRIMARY KEY,
+    produto varchar
+);
+
+CREATE TABLE NotaFiscal (
+    CNPJ int,
+    qtde int,
+    codigoProduto varchar,
+    dataHora varchar,
+    codigoNota varchar,
+    codigoEmpresa varchar,
+    PRIMARY KEY (CNPJ, codigoProduto, codigoNota, codigoEmpresa)
+);
+
+CREATE TABLE Empresa (
+    empresa varchar,
+    codigoEmpresa varchar,
+    CNPJ int,
+    PRIMARY KEY (codigoEmpresa, CNPJ)
+);
+
+CREATE TABLE Relacionamento_1 (
+    fk_Empresa_codigoEmpresa varchar,
+    fk_Empresa_CNPJ int,
+    fk_NotaFiscal_CNPJ int,
+    fk_NotaFiscal_codigoProduto varchar,
+    fk_NotaFiscal_codigoNota varchar,
+    fk_NotaFiscal_codigoEmpresa varchar
+);
+
+CREATE TABLE Relacionamento_2 (
+    fk_Produto_codigoProduto varchar,
+    fk_NotaFiscal_CNPJ int,
+    fk_NotaFiscal_codigoProduto varchar,
+    fk_NotaFiscal_codigoNota varchar,
+    fk_NotaFiscal_codigoEmpresa varchar
+);
+ 
+ALTER TABLE Relacionamento_1 ADD CONSTRAINT FK_Relacionamento_1_1
+    FOREIGN KEY (fk_Empresa_codigoEmpresa, fk_Empresa_CNPJ)
+    REFERENCES Empresa (codigoEmpresa, CNPJ)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Relacionamento_1 ADD CONSTRAINT FK_Relacionamento_1_2
+    FOREIGN KEY (fk_NotaFiscal_CNPJ, fk_NotaFiscal_codigoProduto, fk_NotaFiscal_codigoNota, fk_NotaFiscal_codigoEmpresa)
+    REFERENCES NotaFiscal (CNPJ, codigoProduto, codigoNota, codigoEmpresa)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Relacionamento_2 ADD CONSTRAINT FK_Relacionamento_2_1
+    FOREIGN KEY (fk_Produto_codigoProduto)
+    REFERENCES Produto (codigoProduto)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE Relacionamento_2 ADD CONSTRAINT FK_Relacionamento_2_2
+    FOREIGN KEY (fk_NotaFiscal_CNPJ, fk_NotaFiscal_codigoProduto, fk_NotaFiscal_codigoNota, fk_NotaFiscal_codigoEmpresa)
+    REFERENCES NotaFiscal (CNPJ, codigoProduto, codigoNota, codigoEmpresa)
+    ON DELETE SET NULL;
