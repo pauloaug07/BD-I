@@ -1,0 +1,55 @@
+/* Lógico_1: */
+
+CREATE TABLE Livros (
+    genero varchar,
+    autor varchar,
+    codigoLivro int PRIMARY KEY,
+    titulo varchar,
+    anoDeLancamento int
+);
+
+CREATE TABLE Funcionario (
+    RE int,
+    nomeFuncionario varchar,
+    dataDeNascimento int,
+    endereco varchar,
+    CPFfuncionario int,
+    codigoDepartamento int,
+    telefoneFuncionario int,
+    PRIMARY KEY (RE, CPFfuncionario, codigoDepartamento, telefoneFuncionario)
+);
+
+CREATE TABLE Departamento (
+    numeroFuncionarios int,
+    codigoDepartamento int,
+    tipoDepartamento varchar,
+    telefoneContato int,
+    PRIMARY KEY (codigoDepartamento, telefoneContato)
+);
+
+CREATE TABLE Emprestimo (
+    codigoLivro int,
+    dataDevolucao int,
+    dataEmprestimo int,
+    CPFcliente int,
+    codigoEmprestimo int,
+    PRIMARY KEY (codigoLivro, CPFcliente, codigoEmprestimo)
+);
+
+CREATE TABLE Cliente (
+    nomeCliente varchar,
+    CPFcliente int,
+    endereco varchar,
+    dataDeNascimento int,
+    telefoneCliente int,
+    PRIMARY KEY (CPFcliente, telefoneCliente)
+);
+
+CREATE TABLE Multas (
+    codigoEmprestimo int,
+    telefoneCliente int,
+    codigoLivro int,
+    valor int,
+    diasAtraso int,
+    PRIMARY KEY (codigoEmprestimo, telefoneCliente, codigoLivro)
+);
