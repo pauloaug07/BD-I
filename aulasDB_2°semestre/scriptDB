@@ -1,0 +1,153 @@
+
+CREATE DATABASE `dbetec` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+
+CREATE TABLE `alunos` (
+  `rm` int(11) NOT NULL,
+  `nome` varchar(128) NOT NULL,
+  `idade` int(11) NOT NULL,
+  PRIMARY KEY (`rm`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+CREATE TABLE `cursos` (
+  `idcurso` int(11) NOT NULL,
+  `curso` varchar(128) NOT NULL,
+  `status` int(11) NOT NULL,
+  PRIMARY KEY (`idcurso`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+CREATE TABLE `materias` (
+  `idmateria` int(11) NOT NULL,
+  `materia` varchar(128) NOT NULL,
+  `status` int(11) NOT NULL,
+  PRIMARY KEY (`idmateria`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `atribuicaomateria` (
+  `idcurso` int(11) NOT NULL,
+  `idmateria` int(11) NOT NULL,
+  PRIMARY KEY (`idcurso`,`idmateria`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+CREATE TABLE `atribuicaoaluno` (
+  `rm` int(11) NOT NULL,
+  `idcurso` int(11) NOT NULL,
+  PRIMARY KEY (`rm`,`idcurso`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+INSERT INTO alunos (rm, nome, idade) VALUES (1, 'Ana Souza', 20);
+INSERT INTO alunos (rm, nome, idade) VALUES (2, 'Bruno Costa', 22);
+INSERT INTO alunos (rm, nome, idade) VALUES (3, 'Carlos Lima', 21);
+INSERT INTO alunos (rm, nome, idade) VALUES (4, 'Daniela Silva', 23);
+INSERT INTO alunos (rm, nome, idade) VALUES (5, 'Eduardo Oliveira', 20);
+INSERT INTO alunos (rm, nome, idade) VALUES (6, 'Fernanda Almeida', 24);
+INSERT INTO alunos (rm, nome, idade) VALUES (7, 'Gabriel Santos', 22);
+INSERT INTO alunos (rm, nome, idade) VALUES (8, 'Helena Martins', 21);
+INSERT INTO alunos (rm, nome, idade) VALUES (9, 'Igor Pereira', 23);
+INSERT INTO alunos (rm, nome, idade) VALUES (10, 'Juliana Rocha', 20);
+INSERT INTO alunos (rm, nome, idade) VALUES (11, 'Kleber Ferreira', 25);
+INSERT INTO alunos (rm, nome, idade) VALUES (12, 'Letícia Gomes', 22);
+INSERT INTO alunos (rm, nome, idade) VALUES (13, 'Marcelo Fernandes', 21);
+INSERT INTO alunos (rm, nome, idade) VALUES (14, 'Natália Cruz', 23);
+INSERT INTO alunos (rm, nome, idade) VALUES (15, 'Otávio Alves', 20);
+INSERT INTO alunos (rm, nome, idade) VALUES (16, 'Patrícia Dias', 24);
+INSERT INTO alunos (rm, nome, idade) VALUES (17, 'Quintino Silva', 22);
+INSERT INTO alunos (rm, nome, idade) VALUES (18, 'Rafaela Lima', 21);
+INSERT INTO alunos (rm, nome, idade) VALUES (19, 'Samuel Araújo', 23);
+INSERT INTO alunos (rm, nome, idade) VALUES (20, 'Tais Santos', 20);
+INSERT INTO alunos (rm, nome, idade) VALUES (21, 'Ulysses Costa', 22);
+INSERT INTO alunos (rm, nome, idade) VALUES (22, 'Vera Oliveira', 24);
+INSERT INTO alunos (rm, nome, idade) VALUES (23, 'William Campos', 21);
+INSERT INTO alunos (rm, nome, idade) VALUES (24, 'Xuxa Lima', 23);
+INSERT INTO alunos (rm, nome, idade) VALUES (25, 'Yasmin Rocha', 20);
+INSERT INTO alunos (rm, nome, idade) VALUES (26, 'Zé Fernandes', 22);
+INSERT INTO alunos (rm, nome, idade) VALUES (27, 'André Almeida', 21);
+INSERT INTO alunos (rm, nome, idade) VALUES (28, 'Beatriz Martins', 23);
+INSERT INTO alunos (rm, nome, idade) VALUES (29, 'Cláudia Silva', 24);
+INSERT INTO alunos (rm, nome, idade) VALUES (30, 'David Santos', 22);
+INSERT INTO alunos (rm, nome, idade) VALUES (31, 'Emanuelle Costa', 20);
+INSERT INTO alunos (rm, nome, idade) VALUES (32, 'Felipe Oliveira', 21);
+INSERT INTO alunos (rm, nome, idade) VALUES (33, 'Gisele Fernandes', 23);
+INSERT INTO alunos (rm, nome, idade) VALUES (34, 'Hugo Araújo', 24);
+INSERT INTO alunos (rm, nome, idade) VALUES (35, 'Isabela Dias', 22);
+INSERT INTO alunos (rm, nome, idade) VALUES (36, 'Jorge Lima', 20);
+INSERT INTO alunos (rm, nome, idade) VALUES (37, 'Karina Rocha', 21);
+INSERT INTO alunos (rm, nome, idade) VALUES (38, 'Lucas Santos', 23);
+INSERT INTO alunos (rm, nome, idade) VALUES (39, 'Mariana Costa', 24);
+INSERT INTO alunos (rm, nome, idade) VALUES (40, 'Nicolas Silva', 22);
+INSERT INTO alunos (rm, nome, idade) VALUES (41, 'Olivia Gomes', 20);
+INSERT INTO alunos (rm, nome, idade) VALUES (42, 'Paulo Almeida', 21);
+INSERT INTO alunos (rm, nome, idade) VALUES (43, 'Quésia Rocha', 23);
+INSERT INTO alunos (rm, nome, idade) VALUES (44, 'Roberta Santos', 24);
+INSERT INTO alunos (rm, nome, idade) VALUES (45, 'Silvio Fernandes', 22);
+INSERT INTO alunos (rm, nome, idade) VALUES (46, 'Tatiane Lima', 20);
+INSERT INTO alunos (rm, nome, idade) VALUES (47, 'Ugo Araújo', 21);
+INSERT INTO alunos (rm, nome, idade) VALUES (48, 'Vanessa Costa', 23);
+INSERT INTO alunos (rm, nome, idade) VALUES (49, 'William Oliveira', 24);
+INSERT INTO alunos (rm, nome, idade) VALUES (50, 'Ximena Santos', 22);
+INSERT INTO alunos (rm, nome, idade) VALUES (51, 'Yuri Gomes', 20);
+INSERT INTO alunos (rm, nome, idade) VALUES (52, 'Zara Almeida', 21);
+INSERT INTO alunos (rm, nome, idade) VALUES (53, 'Adriana Rocha', 23);
+INSERT INTO alunos (rm, nome, idade) VALUES (54, 'Breno Lima', 24);
+INSERT INTO alunos (rm, nome, idade) VALUES (55, 'Cynthia Silva', 22);
+INSERT INTO alunos (rm, nome, idade) VALUES (56, 'Daniel Gomes', 20);
+INSERT INTO alunos (rm, nome, idade) VALUES (57, 'Elena Costa', 21);
+INSERT INTO alunos (rm, nome, idade) VALUES (58, 'Fabio Santos', 23);
+INSERT INTO alunos (rm, nome, idade) VALUES (59, 'Gabriela Fernandes', 24);
+INSERT INTO alunos (rm, nome, idade) VALUES (60, 'Hélder Rocha', 22);
+INSERT INTO alunos (rm, nome, idade) VALUES (61, 'Ingrid Almeida', 20);
+INSERT INTO alunos (rm, nome, idade) VALUES (62, 'Júlio Araújo', 21);
+INSERT INTO alunos (rm, nome, idade) VALUES (63, 'Karla Lima', 23);
+INSERT INTO alunos (rm, nome, idade) VALUES (64, 'Luan Silva', 24);
+INSERT INTO alunos (rm, nome, idade) VALUES (65, 'Mônica Santos', 22);
+INSERT INTO alunos (rm, nome, idade) VALUES (66, 'Neto Costa', 20);
+INSERT INTO alunos (rm, nome, idade) VALUES (67, 'Olga Fernandes', 21);
+INSERT INTO alunos (rm, nome, idade) VALUES (68, 'Pedro Almeida', 23);
+INSERT INTO alunos (rm, nome, idade) VALUES (69, 'Quintana Rocha', 24);
+INSERT INTO alunos (rm, nome, idade) VALUES (70, 'Raul Lima', 22);
+INSERT INTO alunos (rm, nome, idade) VALUES (71, 'Sandra Silva', 20);
+INSERT INTO alunos (rm, nome, idade) VALUES (72, 'Tiago Costa', 21);
+INSERT INTO alunos (rm, nome, idade) VALUES (73, 'Ursula Santos', 23);
+INSERT INTO alunos (rm, nome, idade) VALUES (74, 'Valter Fernandes', 24);
+INSERT INTO alunos (rm, nome, idade) VALUES (75, 'Wanda Rocha', 22);
+INSERT INTO alunos (rm, nome, idade) VALUES (76, 'Xander Lima', 20);
+INSERT INTO alunos (rm, nome, idade) VALUES (77, 'Yasmin Oliveira', 21);
+INSERT INTO alunos (rm, nome, idade) VALUES (78, 'Zé Silva', 23);
+INSERT INTO alunos (rm, nome, idade) VALUES (79, 'Amanda Gomes', 24);
+INSERT INTO alunos (rm, nome, idade) VALUES (80, 'Bernardo Santos', 22);
+INSERT INTO alunos (rm, nome, idade) VALUES (81, 'Cláudia Almeida', 20);
+INSERT INTO alunos (rm, nome, idade) VALUES (82, 'Douglas Rocha', 21);
+INSERT INTO alunos (rm, nome, idade) VALUES (83, 'Eduarda Lima', 23);
+INSERT INTO alunos (rm, nome, idade) VALUES (84, 'Fernando Costa', 24);
+INSERT INTO alunos (rm, nome, idade) VALUES (85, 'Giovana Silva', 22);
+INSERT INTO alunos (rm, nome, idade) VALUES (86, 'Henrique Santos', 20);
+INSERT INTO alunos (rm, nome, idade) VALUES (87, 'Isabel Rocha', 21);
+INSERT INTO alunos (rm, nome, idade) VALUES (88, 'Júlio Santos', 23);
+INSERT INTO alunos (rm, nome, idade) VALUES (89, 'Karine Almeida', 24);
+INSERT INTO alunos (rm, nome, idade) VALUES (90, 'Letícia Lelê do DoisC', 12);
+
+
+INSERT materias (idmateria, materia, status) values (1, 'DB', 1);
+INSERT materias (idmateria, materia, status) values (2, 'Folha de Pontos', 1);
+
+INSERT cursos (idcurso, curso, status) values (1, 'Informática para Internet', 1);
+INSERT cursos (idcurso, curso, status) values (2, 'Administração', 1);
+
+INSERT atribuicaomateria (idcurso, idmateria) values (1, 1);
+INSERT atribuicaomateria (idcurso, idmateria) values (2, 2);
+
+INSERT INTO atribuicaoaluno (rm, idcurso) values (1, 1);
+INSERT INTO atribuicaoaluno (rm, idcurso) values (2, 1);
+INSERT INTO atribuicaoaluno (rm, idcurso) values (3, 1);
+
+INSERT INTO atribuicaoaluno (rm, idcurso) values (4, 2);
+INSERT INTO atribuicaoaluno (rm, idcurso) values (5, 2);
+INSERT INTO atribuicaoaluno (rm, idcurso) values (6, 2);
+
+
+select * from alunos;
